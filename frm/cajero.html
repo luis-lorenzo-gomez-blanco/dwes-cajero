@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático</title>
+    <style>
+        #div_centrar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            width: 320px;
+        }
+
+        .saldo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+
+        .mensaje {
+            font-size: 1em;
+            color: #555;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+
+        input.login {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 220px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            font-size: 1em;
+            text-align: center;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input.login:focus {
+            border-color: #00c6ff;
+        }
+
+        .boton-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .boton {
+            padding: 10px 15px;
+            width: 120px;
+            min-width: 120px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .ingresar {
+            background-color: #00796b;
+        }
+
+        .retirar {
+            background-color: #d32f2f;
+        }
+
+        .boton:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_centrar">
+        <div class="saldo">Saldo: €<span id="saldo">0</span></div>
+        <div class="mensaje" id="mensaje">Bienvenido, seleccione una operación.</div>
+        <input type="number" id="monto" class="login" placeholder="Ingrese cantidad" min="1">
+        <div class="boton-container">
+            <button class="boton ingresar">Ingresar</button>
+            <button class="boton retirar">Retirar</button>
+        </div>
+    </div>
+</body>
+</html>
