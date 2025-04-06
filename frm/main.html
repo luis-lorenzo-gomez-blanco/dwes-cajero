@@ -1,22 +1,70 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
     <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cajero Automático</title>
-    <link href="./css/estilo.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">	
+	<style>
+		.sticky-header {
+		  position: sticky;
+		  top: 0;
+		  background-color: #001f3f;
+		}
+		
+		.sticky-footer {
+		  position: fixed;
+		  bottom: 0;
+		  width: 100%;
+		  background-color: #001f3f;
+		  color: white;
+		  padding: 1rem 0;
+		  text-align: center;
+		}
+	</style>
 </head>
 <body>
-    <header>
-		<h1><a href="">Cajero Automático</a></h1>
-    </header>
-
-    <section>
-		<?php include $contenido ?>
-    </section>
-    
-    <footer><?php echo 'Cajero Automático &#169; '.date("Y").' por
-		<a href="https://luisgomezblanco.notion.site/curriculum" target="_blank"> 
-		Luis Lorenzo Gómez Blanco</a> está bajo licencia 
-		<a href="./LICENCIA.TXT" target="_blank">CC BY-NC-SA 4.0</a>';?></footer>
+	<header class="sticky-header py-3">
+		<div class="container text-center">
+		  <h1 class="text-white m-0">Cajero Automático</h1>
+		</div>
+	</header>
+	
+	<nav>
+	</nav>
+	
+	<main class="container my-5 flex-grow-1">
+		<section name="mensajes">
+			<?php
+				/** 
+					MENSAJES DEL SISTEMA : Emplear solo una
+					---------------------------------------
+					$_SESSION['msg_sistema'] // Para mensajes de depuración
+					$_SESSION['msg_sistema2'] // Para mensajes de depuración
+					$_SESSION['msg_info'] // Para mensajes de información
+					$_SESSION['msg_exito'] // Para mensajes de éxito
+					$_SESSION['msg_aviso'] // Para mensajes de aviso
+					$_SESSION['msg_error'] // Para mensajes de error
+					$_SESSION['msg_valida'] // Para mensajes de validación
+				**/
+				include 'mensajes.html';
+			?>
+		</section>
+		<section>
+			<?php if(isset($contenido)) include $contenido; ?>
+		</section>
+    </main>
+	
+	<aside>
+	</aside>
+	
+	<footer class="sticky-footer">
+		<div class="container">
+			<?php echo 'Cajero Automático &#169; '.date("Y").' por
+			<a href="https://luisgomezblanco.notion.site/curriculum" target="_blank">
+			Luis Lorenzo Gómez Blanco</a> está bajo licencia
+			<a href="./LICENCIA.TXT" target="_blank">CC BY-NC-SA 4.0</a>';?>
+		</div>
+	</footer>
 </body>
 </html>

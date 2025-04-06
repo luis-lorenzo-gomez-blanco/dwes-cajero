@@ -1,0 +1,11 @@
+<?php echo '<div role="alert" class=';
+	if ((isset($_SESSION['msg_sistema']))&&($_SESSION['msg_sistema']!='')) echo '"alert alert-primary">' . $_SESSION['msg_sistema'] . '</div>';
+	else if ((isset($_SESSION['msg_sistema2']))&&($_SESSION['msg_sistema2']!='')) echo '"alert alert-secondary">' . $_SESSION['msg_sistema2'] . '</div>';
+	else if ((isset($_SESSION['msg_info']))&&($_SESSION['msg_info']!='')) echo '"alert alert-info">&#128712;&nbsp;' . $_SESSION['msg_info'] . '</div>';
+	else if ((isset($_SESSION['msg_exito']))&&($_SESSION['msg_exito']!='')) echo '"alert alert-success">&#10004;&nbsp;' . $_SESSION['msg_exito'] . '</div>';
+	else if ((isset($_SESSION['msg_aviso']))&&($_SESSION['msg_aviso']!='')) echo '"alert alert-warning">&#9888;&nbsp;' . $_SESSION['msg_aviso'] . '</div>';
+	else if ((isset($_SESSION['msg_error']))&&($_SESSION['msg_error']!='')) echo '"alert alert-danger">&#10008;&nbsp;' . $_SESSION['msg_error'] . '</div>';
+	else if ((isset($_SESSION['msg_valida']))&&($_SESSION['msg_valida']!='')) echo '"alert alert-dark">&#8263;&nbsp;' . $_SESSION['msg_valida'] . '</div>';
+	else echo '"" style="display:none;"></div>';
+	// if ((isset($_SESSION['']))||($_SESSION['']!='')) echo 'alert alert-light';
+?>
