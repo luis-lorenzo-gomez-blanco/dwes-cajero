@@ -21,6 +21,7 @@
 		  padding: 1rem 0;
 		  text-align: center;
 		}
+
 	</style>
 </head>
 <body>
@@ -30,7 +31,10 @@
 		</div>
 	</header>
 	
-	<nav>
+	<nav class="navbar navbar-light bg-light">
+		<form class="form-inline ms-auto">
+			<input type="submit" class="btn btn-sm btn-outline-secondary" name="desconectar" value="Desconectar" />
+		</form>
 	</nav>
 	
 	<main class="container my-5 flex-grow-1">
@@ -50,7 +54,7 @@
 				include 'mensajes.html';
 			?>
 		</section>
-		<section>
+		<section class="d-flex justify-content-center align-items-center">
 			<?php if(isset($contenido)) include $contenido; ?>
 		</section>
     </main>
